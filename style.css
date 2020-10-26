@@ -18,6 +18,7 @@ ul{
     text-align: left;
 }
 ul.mainMenu {
+    border-radius: 3%;
     width:85%;
     background-color:#B13D2E ;
 
@@ -92,6 +93,11 @@ h3{
         text-decoration: none;
         color:white;
     }
+    .col-sm-4 {
+        flex:none;
+        max-width: fit-content;
+        margin: 3%;
+    }
 
     ul.mainMenu {
         width:30%;
@@ -112,7 +118,7 @@ h3{
     }
 
     .mainContent{
-
+    float:right;
         max-height: 90%;
         margin: 0;
         display: inline-block;
