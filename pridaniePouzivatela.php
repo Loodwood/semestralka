@@ -11,10 +11,16 @@
 
 <?php
 include 'databaza.php';
-
+header('Content-Type: text/html; charset=utf-8');
 function kontrola(){
 
 $odoslanie = true;
+    if ( preg_match('/\s/',$_POST["email"]) || preg_match('/\s/',$_POST["prihlasovacieMeno"])
+        || preg_match('/\s/',$_POST["meno"]) || preg_match('/\s/',$_POST["priezvisko"])
+        || preg_match('/\s/',$_POST["heslo"]) || preg_match('/\s/',$_POST["confirm_heslo"])){
+        ?><p class="p-3 mb-2 bg-danger text-white"><?php  echo "Prosím nezadávaj prázdne znaky."; ?></p><?php
+        $odoslanie=false;
+    }
 if (strlen($_POST["prihlasovacieMeno"])<3){
     ?><p class="p-3 mb-2 bg-danger text-white"><?php  echo "Prosím zadaj vačšie prihlasovacie meno ako 3."; ?></p><?php
     $odoslanie=false;
@@ -40,11 +46,14 @@ if (strcmp($_POST["heslo"],$_POST["confirm_heslo"])){
     $count=$qr->fetch();
     ?></div><?php
 
-if($count[0]==1){
+if($count[0]>0){
    $odoslanie=false;
    ?><p class="p-3 mb-2 bg-danger text-white"><?php echo "Už existuje užívateľ s tímto menom.";?></p><?php
 }
+    if($odoslanie){
+        ?><p class="p-3 mb-2 bg-success text-white"><?php echo "Úspešne si sa registroval!";?></p><?php
 
+    }
 
 return $odoslanie;
 }

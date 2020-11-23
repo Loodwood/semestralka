@@ -17,7 +17,7 @@
 <ul class="row p-3 center mainMenu">
 
     <li class="mainMenu"><a class="link" href="Ponuka.php">Ponuka</a></li>
-    <li class="mainMenu"><a class="link" href="informacie.html">Informácie</a></li>
+    <li class="mainMenu"><a class="link" href="informacie.php">Informácie</a></li>
     <li class="mainMenu" ><a class="link" href="Prihlasenie.php">Prihlasenie</a></li>
     <li class="mainMenu"><a  href="index.php"><h2>SOMFIT</h2></a></li>
 </ul>
